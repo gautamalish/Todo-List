@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainDiv{
+  width: 60vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.inputDiv{
+  margin: auto;
+  width: 200px;
+  margin-top: 20px;
+}
+.inputDiv>input{
+  width: 100%;
+  padding: 10px;
+}
+.todoItems{
+  padding: 10px;
+  background-color: salmon;
+  margin-bottom: 10px;
+  border-radius: 7px;
+  width: 32vw;
+  list-style: none;
+}
+.deleteIcon:hover{
+  color: red;
+  transition: all 0.3s;
+}

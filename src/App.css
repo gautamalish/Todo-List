@@ -1,0 +1,43 @@
+.todoAdd{
+  display: flex;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 36vw;
+}
+.todoAdd>input{
+  padding: 10px;
+  width: 30vw;
+  border-radius: 7px;
+  border: 1px solid gray;
+}
+.todoAdd>button{
+  padding: 10px;
+  background-color: rgb(14, 225, 14);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 7px;
+  
+}
+.itemsUl{
+  width: 36vw;
+  margin: auto;
+  margin-top: 1em;
+}
+.listItemDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.itemCheckBox{
+  width: 3em;
+  height: 2em;
+  cursor: pointer;
+}
+.errorDiv{
+  margin: auto;
+  margin-top: 10px;
+  color: red;
+}
