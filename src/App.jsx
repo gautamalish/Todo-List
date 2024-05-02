@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Search from './Search/Search'
 import './App.css'
 import { MdDelete } from "react-icons/md";
 function App() {
   const [items,setItems]=useState(JSON.parse(localStorage.getItem("listItem")) || [])
   const [itemName,setItemName]=useState("")
-  const [checked,setChecked]=useState(false)
   const [error,setError]=useState("")
+  const [search,setSearch]=useState("")
+  const itemToDisplay=items.filter((item)=>item.name.toLowerCase().includes(search.toLowerCase()))
+  console.log(itemToDisplay)
   function onDeleteClick(ind){
     const newList=items.filter((item,index)=>index!==ind)
     setItems(newList)
@@ -23,6 +26,8 @@ function App() {
     if(itemName.trim()){
       setItems(listItem)
       localStorage.setItem("listItem",JSON.stringify(listItem))
+      setError("")
+      setItemName("")
     }
     else{
       setError("Please enter an Item")
@@ -40,8 +45,9 @@ function App() {
         <input type="text" placeholder='Enter Todo' value={itemName} onChange={(e)=>setItemName(e.target.value)} />
         <button onClick={AddTodo}>Add Todo</button>
       </div>
+      <Search search={search} setSearch={setSearch}/>
       <ul className='itemsUl'>
-        {items.map((item,index)=>{
+        {itemToDisplay.map((item,index)=>{
           return (
             
           <div className='listItemDiv' key={index}>

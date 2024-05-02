@@ -1,0 +1,10 @@
+.searchBox{
+    padding:10px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    width: 30vw;
+}
+.SearchDiv{
+    margin: auto;
+    margin-top: 15px;
+}
